@@ -103,7 +103,7 @@ valueResult getValueAt(linkedList *list, int index) {
 
 int len(linkedList *list) {
     int len = 0;
-    while (list->addrOfNextNum) {
+    while (list) {
         len += 1;
         list = list->addrOfNextNum;
     }
