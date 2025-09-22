@@ -14,12 +14,11 @@ errorCode append(linkedList **list, value newData, valueType dataTypeOfValue) {
     temp->dataType = dataTypeOfValue;
     temp->addrOfNextNum = NULL;
 
-    linkedList **ptrToNode = list;
-    while (*ptrToNode) {
-        ptrToNode = &(*ptrToNode)->addrOfNextNum;
+    while (*list) {
+        list = &(*list)->addrOfNextNum;
     }
 
-    *ptrToNode = temp;
+    *list = temp;
     return SUCCESS;
 
     // if (!*list) {
@@ -45,18 +44,16 @@ errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, 
     temp->data = newData;
     temp->dataType = dataTypeOfValue;
 
-    linkedList **ptrToNode = list;
-    while (*ptrToNode && index--) {
-        ptrToNode = &(*ptrToNode)->addrOfNextNum;
-    }
+    while (*list && index--)
+        list = &(*list)->addrOfNextNum;
     
     if (index > 0) {
         free(temp);
         return INDEX_OUT_OF_RANGE;
     }
 
-    temp->addrOfNextNum = *ptrToNode;
-    *ptrToNode = temp;
+    temp->addrOfNextNum = *list;
+    *list = temp;
 
     return SUCCESS;
 
@@ -79,7 +76,6 @@ errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, 
     // temp->addrOfNextNum = tempOfList->addrOfNextNum;
     // tempOfList->addrOfNextNum = temp;
     // return SUCCESS;
-
 }
 
 valueResult getValueAt(linkedList *list, int index) {
