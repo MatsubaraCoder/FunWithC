@@ -20,19 +20,6 @@ errorCode append(linkedList **list, value newData, valueType dataTypeOfValue) {
 
     *list = temp;
     return SUCCESS;
-
-    // if (!*list) {
-    //     *list = temp;
-    //     return SUCCESS;
-    // }
-
-    // linkedList *lastLinkedList = *list;
-    // while (lastLinkedList->addrOfNextNum) {
-    //     lastLinkedList = lastLinkedList->addrOfNextNum;
-    // }
-    // lastLinkedList->addrOfNextNum = temp;
-
-    // return SUCCESS;
 }
 
 errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, int index) {
@@ -56,39 +43,19 @@ errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, 
     *list = temp;
 
     return SUCCESS;
-
-    // if (index == 0) {
-    //     temp->addrOfNextNum = *list;
-    //     *list = temp;
-    //     return SUCCESS;
-    // }
-
-    // linkedList *tempOfList = *list;
-    // while (tempOfList && --index > 0) {
-    //     tempOfList = tempOfList->addrOfNextNum;
-    // }
-
-    // if (index) {
-    //     free(temp);
-    //     return INDEX_OUT_OF_RANGE;
-    // }
-
-    // temp->addrOfNextNum = tempOfList->addrOfNextNum;
-    // tempOfList->addrOfNextNum = temp;
-    // return SUCCESS;
 }
 
 valueResult getValueAt(linkedList *list, int index) {
     valueResult result = { .error = true };
 
-    if (!list || index < 0)
+    if (index < 0)
         return result;
 
-    while (list && --index >= 0) {
+    while (list && index-- > 0)
         list = list->addrOfNextNum;
-        if (!list)
-            return result;
-    }
+
+    if (!list)
+        return result;
 
     result.data = list->data;
     result.dataType = list->dataType;
