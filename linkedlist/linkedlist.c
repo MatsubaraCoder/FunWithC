@@ -48,6 +48,22 @@ errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, 
     return SUCCESS;
 }
 
+errorCode deleteAt(linkedList **list, int index) {
+    if (index < 0)
+        return INDEX_OUT_OF_RANGE;
+
+    while (*list && index-- > 0)
+        list = &(*list)->addrOfNextNum;
+    
+    if (!*list)
+        return INDEX_OUT_OF_RANGE;
+
+    linkedList *temp = *list;
+    *list = temp->addrOfNextNum;
+    free(temp);
+    return SUCCESS;
+}
+
 valueResult getValueAt(linkedList *list, int index) {
     valueResult result = { .error = true };
 
