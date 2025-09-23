@@ -28,6 +28,9 @@ errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, 
     if (!temp)
         return MEMORY_ALLOCATION_FAILED;
 
+    if (index < 0)
+        return INDEX_OUT_OF_RANGE;
+
     temp->data = newData;
     temp->dataType = dataTypeOfValue;
 
