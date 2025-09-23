@@ -14,20 +14,25 @@ int main() {
     append(&myList, num2, INT);
 
     value num3 = {.floatNumber = 12.5};
-    insertAt(&myList, num3, FLOAT, 0);
+    insertAt(&myList, num3, FLOAT, 2);
 
+    printLinkedList(myList);
+    deleteAt(&myList, 0);
     printLinkedList(myList);
 
     printf("len: %d\n", len(myList));
 
-    valueResult result = getValueAt(myList, 3);
-    if (result.error) {
-        printf("error\n");
-    } else {
-        if (result.dataType == INT)
-            printf("%d\n", result.data.intNumber);
-        else if (result.dataType == FLOAT)
-            printf("%f\n", result.data.floatNumber);
+    for (int i=-1; i<4; i++) {
+        valueResult result = getValueAt(myList, i);
+        if (result.error) {
+            printf("INDEX OUT OF RANGE : %d\n", i);
+        } else {
+            printf("index: %d , ", i);
+            if (result.dataType == INT)
+                printf("%d\n", result.data.intNumber);
+            else if (result.dataType == FLOAT)
+                printf("%f\n", result.data.floatNumber);
+        }
     }
 
     freeLinkedList(&myList);
