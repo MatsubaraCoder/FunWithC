@@ -8,6 +8,7 @@ A **simple implementation of a singly linked list in C** with basic operations.
 
 - `append` : Add a new element at the end of the list
 - `insertAt` : Insert an element at a specific index
+- `deleteAt` : Remove an element at a specific index
 - `getValueAt` : Get the value at a specific index
 - `len` : Return the length of the list
 - `freeLinkedList` : Free all memory used by the list
@@ -17,7 +18,6 @@ A **simple implementation of a singly linked list in C** with basic operations.
 
 ## 🔜 Planned Functions
 
-- `deleteAt` : Remove an element at a specific index
 - `getByValue` : Find element(s) by value
 - `merge` : Merge two linked lists
 - Other useful utilities like `reverse`, `sort`, `findMax/Min` may also be added.
