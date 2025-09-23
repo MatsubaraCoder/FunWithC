@@ -17,26 +17,38 @@ int main() {
     value num3 = {.floatNumber = 12.5};
     insertAt(&myList, num3, FLOAT, 2);
 
-    printLinkedList(myList);
-    deleteAt(&myList, 0);
-    printLinkedList(myList);
+    // printLinkedList(myList);
+    // deleteAt(&myList, 0);
+    // printLinkedList(myList);
 
-    printf("len: %d\n", len(myList));
+    // printf("len: %d\n", len(myList));
 
-    for (int i=-1; i<=len(myList); i++) {
-        valueResult result = getValueAt(myList, i);
-        if (result.error) {
-            printf("INDEX OUT OF RANGE : %d\n", i);
-        } else {
-            printf("index: %d , ", i);
-            if (result.dataType == INT)
-                printf("%d\n", result.data.intNumber);
-            else if (result.dataType == FLOAT)
-                printf("%f\n", result.data.floatNumber);
-        }
-    }
+    // for (int i=-1; i<=len(myList); i++) {
+    //     valueResult result = getValueAt(myList, i);
+    //     if (result.error) {
+    //         printf("INDEX OUT OF RANGE : %d\n", i);
+    //     } else {
+    //         printf("index: %d , ", i);
+    //         if (result.dataType == INT)
+    //             printf("%d\n", result.data.intNumber);
+    //         else if (result.dataType == FLOAT)
+    //             printf("%f\n", result.data.floatNumber);
+    //     }
+    // }
+
+    linkedList *myNewList = NULL;
+
+    value num4 = {.intNumber = 20};
+    append(&myNewList, num4, INT);
+
+    printLinkedList(myNewList);
+
+    printLinkedList(myList);
+    merge(&myList, myNewList);
+    printLinkedList(myList);
 
     freeLinkedList(&myList);
+    myNewList = NULL;
 
     return 0;
 }
