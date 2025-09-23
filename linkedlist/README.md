@@ -10,16 +10,16 @@ A **simple implementation of a singly linked list in C** with basic operations.
 - `insertAt` : Insert an element at a specific index
 - `deleteAt` : Remove an element at a specific index
 - `getValueAt` : Get the value at a specific index
-- `len` : Return the length of the list
+- `merge` : Merge two linked lists
 - `freeLinkedList` : Free all memory used by the list
-- `printLinkedList` : Print the list in a readable format
+- `len(utils)` : Return the length of the list
+- `printLinkedList(utils)` : Print the list in a readable format
 
 ---
 
 ## 🔜 Planned Functions
 
 - `getByValue` : Find element(s) by value
-- `merge` : Merge two linked lists
 - Other useful utilities like `reverse`, `sort`, `findMax/Min` may also be added.
 
 ---
