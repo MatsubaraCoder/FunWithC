@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "linkedlist.h"
+#include "utils.h"
 
 
 int main() {
@@ -22,7 +23,7 @@ int main() {
 
     printf("len: %d\n", len(myList));
 
-    for (int i=-1; i<4; i++) {
+    for (int i=-1; i<=len(myList); i++) {
         valueResult result = getValueAt(myList, i);
         if (result.error) {
             printf("INDEX OUT OF RANGE : %d\n", i);

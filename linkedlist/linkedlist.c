@@ -83,15 +83,6 @@ valueResult getValueAt(linkedList *list, int index) {
     return result;
 }
 
-int len(linkedList *list) {
-    int len = 0;
-    while (list) {
-        len += 1;
-        list = list->addrOfNextNum;
-    }
-    return len;
-}
-
 void freeLinkedList(linkedList **list) {
     if (!*list)
         return;
@@ -103,19 +94,4 @@ void freeLinkedList(linkedList **list) {
         free(temp);
     }
     *list = NULL;
-}
-
-void printLinkedList(linkedList *list) {
-    if (list) {
-        linkedList *temp = list;
-        while (temp) {
-            if (temp->dataType == INT) {
-                printf("%d -> ", temp->data.intNumber);
-            } else if (temp->dataType == FLOAT) {
-                printf("%f -> ", temp->data.floatNumber);
-            }
-            temp = temp->addrOfNextNum;
-        }
-        printf("NULL\n");
-    }
 }

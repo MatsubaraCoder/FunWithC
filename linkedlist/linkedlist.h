@@ -36,8 +36,6 @@ errorCode append(linkedList **list, value newData, valueType dataTypeOfValue);
 errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, int index);
 errorCode deleteAt(linkedList **list, int index);
 valueResult getValueAt(linkedList *list, int index);
-int len(linkedList *list);
 void freeLinkedList(linkedList **list);
-void printLinkedList(linkedList *list);
 
 #endif
