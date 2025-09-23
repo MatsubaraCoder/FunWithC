@@ -83,6 +83,16 @@ valueResult getValueAt(linkedList *list, int index) {
     return result;
 }
 
+void merge(linkedList **firstList, linkedList *secoundList) {
+    if (!secoundList)
+        return;
+
+    while (*firstList)
+        firstList = &(*firstList)->addrOfNextNum;
+
+    *firstList = secoundList;
+}
+
 void freeLinkedList(linkedList **list) {
     if (!*list)
         return;
