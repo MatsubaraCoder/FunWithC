@@ -30,7 +30,7 @@ Compile and run using `clang`:
 
 ```bash
 # Compile
-clang main.c linkedlist.c -o linkedlist
+clang main.c linkedlist.c utils.c -o linkedlist
 
 # Run
 ./linkedlist
