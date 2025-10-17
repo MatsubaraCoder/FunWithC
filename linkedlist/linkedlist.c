@@ -6,7 +6,7 @@
 
 errorCode append(linkedList **list, value newData, valueType dataTypeOfValue) {
     linkedList *temp = (linkedList *)malloc(sizeof(linkedList));
-    
+
     if (!temp)
         return MEMORY_ALLOCATION_FAILED;
 
@@ -36,7 +36,7 @@ errorCode insertAt(linkedList **list, value newData, valueType dataTypeOfValue, 
 
     while (*list && index--)
         list = &(*list)->addrOfNextNum;
-    
+
     if (index > 0) {
         free(temp);
         return INDEX_OUT_OF_RANGE;
@@ -54,7 +54,7 @@ errorCode deleteAt(linkedList **list, int index) {
 
     while (*list && index-- > 0)
         list = &(*list)->addrOfNextNum;
-    
+
     if (!*list)
         return INDEX_OUT_OF_RANGE;
 
