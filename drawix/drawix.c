@@ -49,9 +49,12 @@ bool drawCircle(unsigned int width, unsigned int height, unsigned char *image, u
         return false;
 
     for (int y=min_y; y<max_y; y++)
-        for (int x=min_x; x<max_x; x++)
-            if (sqrt(pow((int)center_x-x, 2) + pow((int)center_y-y, 2)) <= radius)
+        for (int x=min_x; x<max_x; x++) {
+            int dx = (int)center_x - x;
+            int dy = (int)center_y - y;
+            if (dx*dx + dy*dy <= radius*radius)
                 drawPixel(width, height, image, x, y, R, G, B);
+        }
 
     return true;
 }
