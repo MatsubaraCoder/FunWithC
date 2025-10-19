@@ -8,3 +8,9 @@ I'm not a femboy, but I like femboys, and they are so good! That's why I drew a 
 Here's another simple image with a background and shapes like squares and circles
 
 ![Shapes](shapes.png)
+
+
+Compile and run using `clang`:
+
+```bash
+clang main.c drawix.c -o ./build/drawix -Wall && ./build/drawix```
