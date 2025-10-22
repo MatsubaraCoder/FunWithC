@@ -9,8 +9,12 @@ Here's another simple image with a background and shapes like squares and circle
 
 ![Shapes](shapes.png)
 
+Random lines
+
+![Random lines](lines.png)
 
 Compile and run using `clang`:
 
 ```bash
-clang main.c drawix.c -o ./build/drawix -Wall && ./build/drawix```
+clang main.c drawix.c -o ./build/drawix -Wall && ./build/drawix
+```
